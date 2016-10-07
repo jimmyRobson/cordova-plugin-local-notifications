@@ -135,7 +135,6 @@
  */
 - (void) cancel:(CDVInvokedUrlCommand*)command
 {
-    [self.commandDelegate runInBackground:^{
         for (NSNumber* id in command.arguments) {
             UILocalNotification* notification;
 
@@ -149,7 +148,6 @@
         }
 
         [self execCallback:command];
-    }];
 }
 
 /**
